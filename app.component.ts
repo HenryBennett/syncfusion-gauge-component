@@ -11,8 +11,8 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  maxScore: number = 150; // This value would come from the getSurvey() function and not hard coded
-  surveyScore: number = 83; // This value would come from the getSurvey() function and not hard coded
+  maxScore: number = 150;   // This value would come from the getSurvey() function and would not be hard coded
+  surveyScore: number = 83; // This value would come from the getSurvey() function and would not be not hard coded
   @ViewChild('gauge')
   public circularGauge: CircularGaugeComponent;
   public tooltipInterval1: number;
@@ -32,6 +32,7 @@ export class AppComponent {
   };
   public pointers: Object[] = [
     {
+      value: this.surveyScore, // Set the direction of the pointer on the gauge
       radius: '85%',
       color: '#fab34b',
       animation: { enable: false },
@@ -39,23 +40,18 @@ export class AppComponent {
       cap: { radius: 7, border: { color: '#fab34b', width: 2.5 }, color: 'white', },
       needleTail: { length: '0%' },
       needleStartWidth: 2,
-      value: this.surveyScore
     },
   ];
   public ranges: Object[] = [
     {
+      end: this.maxScore, // Set the range of the color dial
       start: 0,
-      end: this.maxScore,
       startWidth: 10,
       endWidth: 10,
       color: '#fab34b',
       roundedCornerRadius: 10,
     },
   ];
-
-  ngAfterViewInit(): void {
-    //this.circularGauge.setPointerValue(0, 0, this.surveyScore);
-  }
 
   constructor() {
     // code

@@ -1,0 +1,17 @@
+<div class="control-section">
+    <ejs-circulargauge id="container5" #fifthgauge style='display: block; height:300px;'>
+    <e-axes>
+        <e-axis startAngle=210 endAngle=150 [lineStyle]='lineStyle' [labelStyle]='labelStyle'
+            [majorTicks]='majorTicks' [minorTicks]='minorTicks' radius='100%' minimum=0 maximum='{{maxScore}}'
+            [pointers]='pointers' [ranges]='ranges'>
+        </e-axis>
+    </e-axes>
+</ejs-circulargauge>
+</div>
+<!-- custom code start -->
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>
+<!-- custom code end -->
